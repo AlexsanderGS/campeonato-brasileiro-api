@@ -1,26 +1,15 @@
-package br.edu.cbf.campeonatobrasileiro.entity;
+package br.edu.cbf.campeonatobrasileiro.dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 import lombok.Data;
 
 @Data
-@Entity
-public class Time {
+public class TimeDTO {
 	
-	@Id
-	@GeneratedValue
 	private Integer id;
-	@Column(length = 20)
 	private String nome;
-	@Column(length = 4)
 	private String sigla;
-	@Column(length = 2, name = "estado")
 	private String uf;
 	private String estadio;
-	
 	
 	public Integer getId() {
 		return id;
@@ -52,7 +41,6 @@ public class Time {
 	public void setEstadio(String estadio) {
 		this.estadio = estadio;
 	}
-	
 	
 
 }
