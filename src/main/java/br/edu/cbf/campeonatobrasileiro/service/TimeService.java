@@ -36,7 +36,7 @@ public class TimeService {
 		return entity;
 	}
 
-	private TimeDTO toDto(Time entity) {
+	public TimeDTO toDto(Time entity) {
 		TimeDTO dto = new TimeDTO();
 		dto.setEstadio(entity.getEstadio());
 		dto.setSigla(entity.getSigla());
@@ -51,6 +51,10 @@ public class TimeService {
 
 	public TimeDTO obterTimes(Integer id) {
 		return toDto(repository.findById(id).get());
+	}
+
+	public List<Time> findAll() {
+		return repository.findAll();
 	}
 
 }
