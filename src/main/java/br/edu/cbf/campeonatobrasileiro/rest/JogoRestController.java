@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.cbf.campeonatobrasileiro.dto.JogoDTO;
+import br.edu.cbf.campeonatobrasileiro.dto.JogoFinalizadoDTO;
 import br.edu.cbf.campeonatobrasileiro.service.JogoService;
 
 @RestController
@@ -34,7 +35,7 @@ public class JogoRestController {
 	}
 	
 	@PostMapping(value  = "/finalizar/{id}")
-	public ResponseEntity<JogoDTO> finalizar(@PathVariable Integer id, @RequestBody JogoDTO jogoDto) throws Exception {
+	public ResponseEntity<JogoDTO> finalizar(@PathVariable Integer id, @RequestBody JogoFinalizadoDTO jogoDto) throws Exception {
 		return ResponseEntity.ok().body(jogoService.finalizar(id, jogoDto));
 	}
 	

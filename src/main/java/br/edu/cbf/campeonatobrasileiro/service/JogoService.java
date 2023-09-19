@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.cbf.campeonatobrasileiro.dto.JogoDTO;
+import br.edu.cbf.campeonatobrasileiro.dto.JogoFinalizadoDTO;
 import br.edu.cbf.campeonatobrasileiro.entity.Jogo;
 import br.edu.cbf.campeonatobrasileiro.entity.Time;
 import br.edu.cbf.campeonatobrasileiro.repository.JogoRepository;
@@ -106,7 +107,7 @@ public class JogoService {
 		return jogoRepository.findAll().stream().map(entity -> toDto(entity)).collect(Collectors.toList());
 	}
 
-	public JogoDTO finalizar(Integer id, JogoDTO jogoDto) throws Exception {
+	public JogoDTO finalizar(Integer id, JogoFinalizadoDTO jogoDto) throws Exception {
 		Optional<Jogo> optionalJogo = jogoRepository.findById(id);
 		if (optionalJogo.isPresent()) {
 			final Jogo jogo = optionalJogo.get();
