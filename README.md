@@ -29,3 +29,5 @@ Ações:
 - [x]  Calcular a Classificação
 - [x]  Cadastrar Jogos
 - [x]  Colocar resultados dos Jogos
+
+Neste projeto utilizamos a linguagem Java com Spring Framework, H2 Database para conferir se os dados estão sendo persistidos e Postman para chamar as requisições.
